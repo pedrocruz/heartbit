@@ -5,7 +5,7 @@ Fs = 360;                   % sampling frequecy
 t = (0:length(ECG)-1)/Fs;   % creatin the time array
 
 figure                      % create new figure
-subplot(2,2,1)              % first subplot
+subplot(2,1,1)              % first subplot
 plot(t,ECG)                % plotting the signal
 title('ECG')
 dECG = zeros(size(ECG));    % starting an array to store ECG's derivative
@@ -16,10 +16,10 @@ disp(['size(ECG) = ', num2str(size(ECG))]);
 
 sizeECG = size(ECG);
 for i = 2:(sizeECG(2)-1)    % this loop calculates dECG
-    dECG(i) = (halfF) * (ECG(i-1) - ECG(i+1));
+    dECG(i) = (halfF) * (ECG(i+1) - ECG(i-1));
     disp(['ECG(i-1) = ', num2str(ECG(i-1)), 'ECG(i+1)',num2str(ECG(i+1))]);
 end
-subplot(2,2,2)              % second subplot
+subplot(2,1,2)              % second subplot
 plot(t, dECG);
 title('dECG')
     
