@@ -1,5 +1,5 @@
 load ('100m.mat')           % the signal will be loaded to "val" matrix
-totalPlots = 4;              % the total of graphics plotted
+totalPlots = 5;              % the total of graphics plotted
 val = (val - 1024)/200;     % you have to remove "base" and "gain"
 ECG = val(1,1:1000);        % select the lead (Lead I)
 Fs = 360;                   % sampling frequecy
@@ -24,8 +24,14 @@ title('dECG')               % adding a title to the graphic
 
 FdECG = fft(dECG);          % getting the fourier transform of dECG
 f = (0:length(FdECG)-1)*Fs/length(ECG);
-display(['len(f) = ', num2str(length(f)), 'len(FdECG) = ', num2str(length(FdECG))]);
 subplot(totalPlots,1,3);    % third subplot
-plot(f, FdECG);              % plotting the fourier transform of dECG
+plot(f, FdECG);             % plotting the fourier transform of dECG
 title('F{dECG}')
-    
+
+HdECG = imag(hilbert(dECG));% taking the Hilbert transform of the signal
+subplot (totalPlots, 1, 4); % fourth subplot
+plot(t, HdECG);             % plotting the Hilbert transform
+
+BdECG = abs(hilbert(dECG)); % CReating the envelope
+subplot (totalPlots, 1, 5); % fifth subplot
+plot(t, HdECG);             % plotting the envelope of Hilbert transform
