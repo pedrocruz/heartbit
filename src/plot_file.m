@@ -1,5 +1,5 @@
 function [] = plot_file( file_name )
-%PLOT_FILE Summary of this function goes here
+%PLOT_FILE plots lots of data about ECG
 %   Detailed explanation goes here
     % Load data to the 'val' Matrix.
     disp(file_name);
@@ -12,7 +12,7 @@ function [] = plot_file( file_name )
     val = (val - 1024)/200;     % you have to remove "base" and "gain"
     ECG = val(1,1:1000);        % select the lead (Lead I)
     Fs = 360;                   % sampling frequecy
-    t = (0:length(ECG)-1)/Fs;   % creatin the time array
+    t = (0:length(ECG)-1)/Fs;   % creating the time array
 
     figure                      % create new figure
     subplot(totalPlots,1,1)     % first subplot

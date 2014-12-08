@@ -26,7 +26,8 @@
 %    'Ventricular ectopy', 'Ventricular ectopy', 'Ventricular ectopy'];
 % 
 
-plot_file( 'Data/102m.mat' );
+%plot_file( 'Data/102m.mat' );
+simple_plot('Data/102m.mat');
 
 % %fid = fopen('variances.txt','wt');  % Note the 'wt' for writing in text mode
 % %fprintf(fid,'%f\n',a);  % The format string is applied to each element of a
