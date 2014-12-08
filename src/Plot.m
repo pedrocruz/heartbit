@@ -1,4 +1,4 @@
-% Trabalho de Telecomunicações
+% Trabalho de Telecomunicacoes
 % Pedro Cruz
 % Thiago Barroso Perrotta
 
