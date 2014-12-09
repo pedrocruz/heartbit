@@ -1,6 +1,7 @@
-% Trabalho de Telecomunicacoes
-% Pedro Cruz
-% Thiago Barroso Perrotta
+% Trabalho de Telecomunicações
+% Alunos
+  % Pedro Cruz
+  % Thiago Barroso Perrotta
 
 data = {'Data/100m.mat', 'Data/101m.mat', 'Data/102m.mat' ...
     'Data/103m.mat', 'Data/104m.mat', 'Data/105m.mat' ...
@@ -29,4 +30,8 @@ diag = {'Supraventricular ectopy', 'Supraventricular ectopy', 'Ventricular ectop
 %     disp(['Var for file ', data{i}, ' = ', num2str(var), 'diag = ', diag{i}]);
 % end    
 
-plot_file(data{1});
+%plot_file(data{1});
+
+for i = 1:(length(data))
+  simple_plot(data{i},99+i);
+end

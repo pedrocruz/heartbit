@@ -1,4 +1,4 @@
-function [ ] = simple_plot( file_name )
+function [ ] = simple_plot( file_name,number)
 %SIMPLE_PLOT Summary of this function goes here
 %   Detailed explanation goes here
     load (file_name);
@@ -22,7 +22,9 @@ function [ ] = simple_plot( file_name )
     range = (minimum + maximum);
     rangedBdECG = BdECG/range;
     
+    h=figure('visible', 'off');
     plot(t, ECG, 'k', t, rangedBdECG, 'b'); 
+    saveas(h,sprintf('Output/output%d.jpg',number), 'png');
 
 end
 
